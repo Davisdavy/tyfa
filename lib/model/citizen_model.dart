@@ -1,4 +1,9 @@
 class Citizen{
-  //final String anonymous;
+  final String name;
+  final String password;
+
+  Citizen({this.name, this.password});
+
+
 
 }
