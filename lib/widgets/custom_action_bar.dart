@@ -5,10 +5,10 @@ import 'package:tyfa/service/flutter_services.dart';
 import '../constants.dart';
 class CustomActionBar extends StatelessWidget {
   final String title;
-  final bool hasBackArrrow;
+  final bool hasBackArrow;
   final bool hasTitle;
   final bool hasBackground;
-  CustomActionBar({this.title, this.hasBackArrrow, this.hasTitle, this.hasBackground});
+  CustomActionBar({this.title, this.hasBackArrow, this.hasTitle, this.hasBackground});
 
   FirebaseServices _firebaseServices = FirebaseServices();
 
@@ -18,7 +18,7 @@ class CustomActionBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool _hasBackArrow = hasBackArrrow ?? false;
+    bool _hasBackArrow = hasBackArrow ?? false;
     bool _hasTitle = hasTitle ?? true;
     bool _hasBackground = hasBackground ?? true;
 
@@ -83,26 +83,7 @@ class CustomActionBar extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8.0),
               ),
               alignment: Alignment.center,
-              child: StreamBuilder(
-                stream: _usersRef.doc(_firebaseServices.getUserId()).collection("Cart").snapshots(),
-                builder: (context, snapshot) {
-                  int _totalItems = 0;
-
-                  if(snapshot.connectionState == ConnectionState.active) {
-                    List _documents = snapshot.data.docs;
-                    _totalItems = _documents.length;
-                  }
-
-                  return Text(
-                    "$_totalItems" ?? "0",
-                    style: TextStyle(
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
-                  );
-                },
-              ),
+              child: Icon(Icons.logout, color: Colors.white,),
             ),
           )
         ],
