@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "168113822963",
+    "project_id": "tyfa-taifa",
+    "storage_bucket": "tyfa-taifa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168113822963:android:53b1a72825c5cfca72ab86",
+        "android_client_info": {
+          "package_name": "com.taifa.tyfa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "168113822963-6ru2km0l9vtedk0160q5lknrttd68bld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9MH_mSljXq7cBgXyJZ1JaCWQn6ediIFg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "168113822963-6ru2km0l9vtedk0160q5lknrttd68bld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tyfa/screen/auth_page.dart';
 import 'package:tyfa/screen/parent_page.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: ParentPage(),
+      home: LandingPage(),
     );
   }
 }
