@@ -101,71 +101,92 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                padding: EdgeInsets.only(
-                  top: 24.0,
-                ),
-                child: Text(
-                  "Welcome!\nLogin to your account",
-                  textAlign: TextAlign.center,
-                  style: Constants.boldHeading,
-                ),
-              ),
-              Column(
-                children: [
-                  CustomInput(
-                    hintText: "Email...",
-                    onChanged: (value) {
-                      _loginEmail = value;
-                    },
-                    onSubmitted: (value) {
-                      _passwordFocusNode.requestFocus();
-                    },
-                    textInputAction: TextInputAction.next,
+        child: SingleChildScrollView(
+          child: Container(
+            width: double.infinity,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  padding: EdgeInsets.only(
+                    top: 24.0,
                   ),
-                  CustomInput(
-                    hintText: "Password...",
-                    onChanged: (value) {
-                      _loginPassword = value;
-                    },
-                    focusNode: _passwordFocusNode,
-                    isPasswordField: true,
-                    onSubmitted: (value) {
-                      _submitForm();
-                    },
+                  child: Text(
+                    "Welcome!\nLogin anonymously",
+                    textAlign: TextAlign.center,
+                    style: Constants.boldHeading,
                   ),
-                  CustomBtn(
-                    text: "Login",
-                    onPressed: () {
-                      _submitForm();
-                    },
-                    isLoading: _loginFormLoading,
-                  )
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  bottom: 16.0,
                 ),
-                child: CustomBtn(
-                  text: "Create New Account",
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => RegisterPage()
+                Column(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50.0),
+
                       ),
-                    );
-                  },
-                  outlineBtn: true,
+                      child: InkWell(
+                        onTap: (){},
+                        child: CircleAvatar(
+                          radius: 60.0,
+                          child: Image.asset("assets/images/anony.png",),
+                          backgroundColor: Colors.transparent,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      "-OR-",
+                      textAlign: TextAlign.center,
+                      style: Constants.boldHeading,
+                    ),
+                    CustomInput(
+                      hintText: "Email...",
+                      onChanged: (value) {
+                        _loginEmail = value;
+                      },
+                      onSubmitted: (value) {
+                        _passwordFocusNode.requestFocus();
+                      },
+                      textInputAction: TextInputAction.next,
+                    ),
+                    CustomInput(
+                      hintText: "Password...",
+                      onChanged: (value) {
+                        _loginPassword = value;
+                      },
+                      focusNode: _passwordFocusNode,
+                      isPasswordField: true,
+                      onSubmitted: (value) {
+                        _submitForm();
+                      },
+                    ),
+                    CustomBtn(
+                      text: "Login",
+                      onPressed: () {
+                        _submitForm();
+                      },
+                      isLoading: _loginFormLoading,
+                    )
+                  ],
                 ),
-              ),
-            ],
+                Padding(
+                  padding: const EdgeInsets.only(
+                    bottom: 16.0,
+                  ),
+                  child: CustomBtn(
+                    text: "Create New Account",
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => RegisterPage()
+                        ),
+                      );
+                    },
+                    outlineBtn: true,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
