@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_app/services/firebase_services.dart';
+import 'package:tyfa/service/flutter_services.dart';
+
+import '../constants.dart';
 class CustomActionBar extends StatelessWidget {
   final String title;
   final bool hasBackArrrow;
@@ -70,9 +72,8 @@ class CustomActionBar extends StatelessWidget {
             ),
           GestureDetector(
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(
-                builder: (context) => CartPage(),
-              ));
+
+
             },
             child: Container(
               width: 42.0,

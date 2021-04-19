@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tyfa/constants.dart';
 import 'package:tyfa/widgets/custom_btn.dart';
+import 'package:tyfa/widgets/custom_input.dart';
 
 
 class RegisterPage extends StatefulWidget {
